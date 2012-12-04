@@ -16,6 +16,12 @@
 		3B191CDE166ABBE0009806BA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B191CDD166ABBE0009806BA /* Default.png */; };
 		3B191CE0166ABBE0009806BA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B191CDF166ABBE0009806BA /* Default@2x.png */; };
 		3B191CE2166ABBE0009806BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B191CE1166ABBE0009806BA /* Default-568h@2x.png */; };
+		3B191CEA166ABC56009806BA /* NDIServerCallManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B191CE9166ABC56009806BA /* NDIServerCallManager.m */; };
+		3B7D955A166D29230005E152 /* NDISlideShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D9559166D29230005E152 /* NDISlideShowViewController.m */; };
+		3B7D9564166EAA230005E152 /* NDIMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D9563166EAA230005E152 /* NDIMapViewController.m */; };
+		3B7D9567166EAA440005E152 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7D9566166EAA440005E152 /* MapKit.framework */; };
+		3B7D956F166EB01E0005E152 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7D956E166EB01E0005E152 /* Social.framework */; };
+		3B7D9571166EB10C0005E152 /* Drafts in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D9570166EB10C0005E152 /* Drafts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,15 @@
 		3B191CDD166ABBE0009806BA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3B191CDF166ABBE0009806BA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3B191CE1166ABBE0009806BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3B191CE8166ABC56009806BA /* NDIServerCallManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDIServerCallManager.h; sourceTree = "<group>"; };
+		3B191CE9166ABC56009806BA /* NDIServerCallManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDIServerCallManager.m; sourceTree = "<group>"; };
+		3B7D9558166D29230005E152 /* NDISlideShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDISlideShowViewController.h; sourceTree = "<group>"; };
+		3B7D9559166D29230005E152 /* NDISlideShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDISlideShowViewController.m; sourceTree = "<group>"; };
+		3B7D9562166EAA230005E152 /* NDIMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDIMapViewController.h; sourceTree = "<group>"; };
+		3B7D9563166EAA230005E152 /* NDIMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDIMapViewController.m; sourceTree = "<group>"; };
+		3B7D9566166EAA440005E152 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3B7D956E166EB01E0005E152 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		3B7D9570166EB10C0005E152 /* Drafts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Drafts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B7D956F166EB01E0005E152 /* Social.framework in Frameworks */,
+				3B7D9567166EAA440005E152 /* MapKit.framework in Frameworks */,
 				3B191CCC166ABBE0009806BA /* UIKit.framework in Frameworks */,
 				3B191CCE166ABBE0009806BA /* Foundation.framework in Frameworks */,
 				3B191CD0166ABBE0009806BA /* CoreGraphics.framework in Frameworks */,
@@ -51,6 +68,8 @@
 		3B191CBC166ABBDF009806BA = {
 			isa = PBXGroup;
 			children = (
+				3B7D956E166EB01E0005E152 /* Social.framework */,
+				3B7D9566166EAA440005E152 /* MapKit.framework */,
 				3B191CD1166ABBE0009806BA /* MonTonTon */,
 				3B191CCA166ABBE0009806BA /* Frameworks */,
 				3B191CC8166ABBE0009806BA /* Products */,
@@ -81,6 +100,13 @@
 				3B191CDA166ABBE0009806BA /* AppDelegate.h */,
 				3B191CDB166ABBE0009806BA /* AppDelegate.m */,
 				3B191CD2166ABBE0009806BA /* Supporting Files */,
+				3B191CE8166ABC56009806BA /* NDIServerCallManager.h */,
+				3B191CE9166ABC56009806BA /* NDIServerCallManager.m */,
+				3B7D9558166D29230005E152 /* NDISlideShowViewController.h */,
+				3B7D9559166D29230005E152 /* NDISlideShowViewController.m */,
+				3B7D9562166EAA230005E152 /* NDIMapViewController.h */,
+				3B7D9563166EAA230005E152 /* NDIMapViewController.m */,
+				3B7D9570166EB10C0005E152 /* Drafts */,
 			);
 			path = MonTonTon;
 			sourceTree = "<group>";
@@ -154,6 +180,7 @@
 				3B191CDE166ABBE0009806BA /* Default.png in Resources */,
 				3B191CE0166ABBE0009806BA /* Default@2x.png in Resources */,
 				3B191CE2166ABBE0009806BA /* Default-568h@2x.png in Resources */,
+				3B7D9571166EB10C0005E152 /* Drafts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +193,9 @@
 			files = (
 				3B191CD8166ABBE0009806BA /* main.m in Sources */,
 				3B191CDC166ABBE0009806BA /* AppDelegate.m in Sources */,
+				3B191CEA166ABC56009806BA /* NDIServerCallManager.m in Sources */,
+				3B7D955A166D29230005E152 /* NDISlideShowViewController.m in Sources */,
+				3B7D9564166EAA230005E152 /* NDIMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +306,7 @@
 				3B191CE7166ABBE0009806BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "NDISlideShowViewController.h"
+#import "NDIMapViewController.h"
 
 @implementation AppDelegate
 
@@ -14,10 +16,46 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    UINavigationController *navigationController = [[UINavigationController alloc] init];
+    navigationController.navigationBar.tintColor = [UIColor redColor];
+    navigationController.navigationBar.topItem.title = @"TEST";
+    
+    
+    /*NDISlideShowViewController *root = [[NDISlideShowViewController alloc] init];
+    root.modalPresentationStyle = UIModalPresentationFormSheet;
+     [navigationController presentViewController:root animated:YES completion:nil];
+     */
+    
+    NDIMapViewController *mapVC = [[NDIMapViewController alloc] init];
+    
+    
+    
     self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = mapVC;
+    
     [self.window makeKeyAndVisible];
+    
+    
+    NDIServerCallManager *netManager = [[NDIServerCallManager alloc] init];
+    netManager.delegate = self;
+    [netManager launchGETRequestAtPath:@"http://www.eurosport.fr"];
+    
     return YES;
 }
+
+//----------------------------------------------------------
+
+- (void) serverCallManager:(NDIServerCallManager *)manager didFailWithStatusCode:(NSInteger)statusCode {
+    NSLog(@"status code %i", statusCode);
+}
+- (void) serverCallManager:(NDIServerCallManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"fail %@", error.debugDescription);
+}
+- (void) serverCallManager:(NDIServerCallManager *)manager didFinishLoading:(NSData *)result {
+    NSLog(@"---< %@",[[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding]);
+}
+
+//-----------------------------------------------------------
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

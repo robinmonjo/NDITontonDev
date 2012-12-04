@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NDIServerCallManager.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate, NDIServerCallManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
