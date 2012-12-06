@@ -22,6 +22,7 @@
 		3B7D9567166EAA440005E152 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7D9566166EAA440005E152 /* MapKit.framework */; };
 		3B7D956F166EB01E0005E152 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7D956E166EB01E0005E152 /* Social.framework */; };
 		3B7D9571166EB10C0005E152 /* Drafts in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D9570166EB10C0005E152 /* Drafts */; };
+		3B7D9577167108700005E152 /* NDITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D9576167108700005E152 /* NDITableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		3B7D9566166EAA440005E152 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3B7D956E166EB01E0005E152 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		3B7D9570166EB10C0005E152 /* Drafts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Drafts; sourceTree = "<group>"; };
+		3B7D9575167108700005E152 /* NDITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDITableViewController.h; sourceTree = "<group>"; };
+		3B7D9576167108700005E152 /* NDITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDITableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 				3B7D9562166EAA230005E152 /* NDIMapViewController.h */,
 				3B7D9563166EAA230005E152 /* NDIMapViewController.m */,
 				3B7D9570166EB10C0005E152 /* Drafts */,
+				3B7D9575167108700005E152 /* NDITableViewController.h */,
+				3B7D9576167108700005E152 /* NDITableViewController.m */,
 			);
 			path = MonTonTon;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				3B191CEA166ABC56009806BA /* NDIServerCallManager.m in Sources */,
 				3B7D955A166D29230005E152 /* NDISlideShowViewController.m in Sources */,
 				3B7D9564166EAA230005E152 /* NDIMapViewController.m in Sources */,
+				3B7D9577167108700005E152 /* NDITableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

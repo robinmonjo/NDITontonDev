@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "NDISlideShowViewController.h"
 #import "NDIMapViewController.h"
+#import "NDISplitViewController.h"
+#import "NDITableViewController.h"
 
 @implementation AppDelegate
 
@@ -27,18 +29,26 @@
      */
     
     NDIMapViewController *mapVC = [[NDIMapViewController alloc] init];
+    UINavigationController *navMap = [[UINavigationController alloc] initWithRootViewController:mapVC];
     
+//    splitViewController.viewControllers = [NSArray arrayWithObjects:rootNav, detailNav, nil];
+
+    NDITableViewController *tableVC = [[NDITableViewController alloc] init];
+    UINavigationController *navTable = [[UINavigationController alloc] initWithRootViewController:tableVC];
+    
+    NDISplitViewController *splitVC = [[NDISplitViewController alloc] init];
+    splitVC.viewControllers = [NSArray arrayWithObjects:navTable, navMap, nil];
     
     
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = mapVC;
+    self.window.rootViewController = splitVC;
     
     [self.window makeKeyAndVisible];
     
     
     NDIServerCallManager *netManager = [[NDIServerCallManager alloc] init];
     netManager.delegate = self;
-    [netManager launchGETRequestAtPath:@"http://www.eurosport.fr"];
+   // [netManager launchGETRequestAtPath:@"http://www.eurosport.fr"];
     
     return YES;
 }
