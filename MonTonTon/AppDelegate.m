@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "NDISlideShowViewController.h"
 #import "NDIMapViewController.h"
-#import "NDISplitViewController.h"
 #import "NDITableViewController.h"
 
 @implementation AppDelegate
@@ -36,7 +35,7 @@
     NDITableViewController *tableVC = [[NDITableViewController alloc] init];
     UINavigationController *navTable = [[UINavigationController alloc] initWithRootViewController:tableVC];
     
-    NDISplitViewController *splitVC = [[NDISplitViewController alloc] init];
+    UISplitViewController *splitVC = [[UISplitViewController alloc] init];
     splitVC.viewControllers = [NSArray arrayWithObjects:navTable, navMap, nil];
     
     

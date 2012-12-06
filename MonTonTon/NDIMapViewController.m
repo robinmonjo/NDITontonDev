@@ -7,6 +7,7 @@
 //
 
 #import "NDIMapViewController.h"
+#import "NDIPlaceAnnotation.h"
 
 @interface NDIMapViewController ()
 
@@ -14,30 +15,33 @@
 
 @implementation NDIMapViewController
 
-@synthesize mapView=_mapView;
+@synthesize mapView=_mapView, displayedPlaces=_displayedPlaces;
 
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+    self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     self.mapView.showsUserLocation = YES;
     [self.view addSubview:self.mapView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 39.281516;
-    zoomLocation.longitude= -76.580806;
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 500, 500);
     
-    [self.mapView setRegion:viewRegion animated:YES];
 }
 
 //more: http://developer.apple.com/library/ios/#documentation/MapKit/Reference/MKMapViewDelegate_Protocol/MKMapViewDelegate/MKMapViewDelegate.html
 //http://developer.apple.com/library/ios/#documentation/MapKit/Reference/MKMapView_Class/MKMapView/MKMapView.html
+
+- (void) dropPins {
+    for (NDIPlaceAnnotation *anno in self.displayedPlaces) {
+        [self.mapView addAnnotation:anno];
+    }
+    CLLocationCoordinate2D zoomLocation = ((NDIPlaceAnnotation*)[self.displayedPlaces lastObject]).coordinate;
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 500, 500);
+    [self.mapView setRegion:viewRegion animated:YES];
+}
 
 
 @end

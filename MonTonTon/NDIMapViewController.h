@@ -12,9 +12,11 @@
 @interface NDIMapViewController : UIViewController {
 @private
     MKMapView *_mapView;
+    NSMutableArray *_displayedPlaces;
     
 }
 
 @property (nonatomic, retain) MKMapView *mapView;
+@property (nonatomic, retain) NSMutableArray *displayedPlaces;
 
 @end
