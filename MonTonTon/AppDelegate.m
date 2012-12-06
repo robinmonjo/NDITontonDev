@@ -10,6 +10,7 @@
 #import "NDISlideShowViewController.h"
 #import "NDIMapViewController.h"
 #import "NDITableViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
 @implementation AppDelegate
 
@@ -17,20 +18,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UINavigationController *navigationController = [[UINavigationController alloc] init];
-    navigationController.navigationBar.tintColor = [UIColor redColor];
-    navigationController.navigationBar.topItem.title = @"TEST";
     
-    
-    /*NDISlideShowViewController *root = [[NDISlideShowViewController alloc] init];
-    root.modalPresentationStyle = UIModalPresentationFormSheet;
-     [navigationController presentViewController:root animated:YES completion:nil];
-     */
+    [self loadTestModel];
     
     NDIMapViewController *mapVC = [[NDIMapViewController alloc] init];
     UINavigationController *navMap = [[UINavigationController alloc] initWithRootViewController:mapVC];
-    
-//    splitViewController.viewControllers = [NSArray arrayWithObjects:rootNav, detailNav, nil];
 
     NDITableViewController *tableVC = [[NDITableViewController alloc] init];
     UINavigationController *navTable = [[UINavigationController alloc] initWithRootViewController:tableVC];
@@ -38,18 +30,58 @@
     UISplitViewController *splitVC = [[UISplitViewController alloc] init];
     splitVC.viewControllers = [NSArray arrayWithObjects:navTable, navMap, nil];
     
-    
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = splitVC;
     
     [self.window makeKeyAndVisible];
     
     
-    NDIServerCallManager *netManager = [[NDIServerCallManager alloc] init];
+    /*NDIServerCallManager *netManager = [[NDIServerCallManager alloc] init];
     netManager.delegate = self;
-   // [netManager launchGETRequestAtPath:@"http://www.eurosport.fr"];
+    [netManager launchGETRequestAtPath:@"http://www.eurosport.fr"];*/
     
     return YES;
+}
+
+- (void) loadTestModel {
+    
+    NDIPlace *place = [[NDIPlace alloc] init];
+    place.name = @"santiago";
+    place.description = @"the place to beach";
+    place.coordinate = CLLocationCoordinate2DMake(39.281516, -76.580806);
+    [[NDIModel sharedInstance] addPlace:place];
+    
+    NDIPlace *place1 = [[NDIPlace alloc] init];
+    place1.name = @"jelio";
+    place1.description = @"great place for ...";
+    place1.coordinate = CLLocationCoordinate2DMake(19.281516, -36.580806);
+    [[NDIModel sharedInstance] addPlace:place1];
+    
+    NDIPlace *place2 = [[NDIPlace alloc] init];
+    place2.name = @"gabrute";
+    place2.description = @"tlace to beach";
+    place2.coordinate = CLLocationCoordinate2DMake(99.281516, 16.580806);
+    [[NDIModel sharedInstance] addPlace:place2];
+    
+    NDIPlace *place3 = [[NDIPlace alloc] init];
+    place3.name = @"santiagoLosA";
+    place3.description = @"the place to beach";
+    place3.coordinate = CLLocationCoordinate2DMake(239.281516, -126.580806);
+    [[NDIModel sharedInstance] addPlace:place3];
+    
+    NDIPlace *place4 = [[NDIPlace alloc] init];
+    place4.name = @"tignes";
+    place4.description = @"ski place to beach";
+    place4.coordinate = CLLocationCoordinate2DMake(67.281516, 24.580806);
+    [[NDIModel sharedInstance] addPlace:place4];
+    
+    NDIPlace *place5 = [[NDIPlace alloc] init];
+    place5.name = @"serto";
+    place5.description = @"sarte ce to beach";
+    place5.coordinate = CLLocationCoordinate2DMake(39.281516, -76.580806);
+    [[NDIModel sharedInstance] addPlace:place5];
+    
+    
 }
 
 //----------------------------------------------------------

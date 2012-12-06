@@ -28,15 +28,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.tableData = [NSMutableArray array];
-    [self.tableData addObject:@"string1"];
-    [self.tableData addObject:@"string2"];
-    [self.tableData addObject:@"string3"];
-    [self.tableData addObject:@"string4"];
-    [self.tableData addObject:@"string5"];
-    [self.tableData addObject:@"string6"];
-    [self.tableData addObject:@"string7"];
-    [self.tableData addObject:@"string8"];
+    self.tableData = [NDIModel sharedInstance].places;
         
     
     self.tableView.delegate = self;
@@ -93,10 +85,11 @@
         _isFiltering = YES;
         self.filteredTableData = [NSMutableArray array];
         
-        for (NSString* string in self.tableData) {
-            NSRange range = [string rangeOfString:text options:NSCaseInsensitiveSearch];
-            if(range.location != NSNotFound) {
-                [self.filteredTableData addObject:string];
+        for (NDIPlace *place in self.tableData) {
+            NSRange rangeName = [place.name rangeOfString:text options:NSCaseInsensitiveSearch];
+            NSRange rangeDescr = [place.description rangeOfString:text options:NSCaseInsensitiveSearch];
+            if(rangeName.location != NSNotFound || rangeDescr.location != NSNotFound) {
+                [self.filteredTableData addObject:place];
             }
         }
     }
@@ -127,16 +120,18 @@
     
     // Configure the cell...
     if (! cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if (_isFiltering) {
-        cell.textLabel.text = [self.filteredTableData objectAtIndex:indexPath.row];
+        cell.textLabel.text = ((NDIPlace *)[self.filteredTableData objectAtIndex:indexPath.row]).name;
+        cell.detailTextLabel.text = ((NDIPlace *)[self.filteredTableData objectAtIndex:indexPath.row]).description;
     }
     else {
-        cell.textLabel.text = [self.tableData objectAtIndex:indexPath.row];
+        cell.textLabel.text = ((NDIPlace *)[self.tableData objectAtIndex:indexPath.row]).name;
+        cell.detailTextLabel.text = ((NDIPlace *)[self.tableData objectAtIndex:indexPath.row]).description;
     }
     
     

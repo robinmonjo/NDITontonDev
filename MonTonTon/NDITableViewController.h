@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NDIModel.h"
 
-@interface NDITableViewController : UITableViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate> {
+@interface NDITableViewController : UITableViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
 @private
     UISearchBar *_searchBar;
     UIBarButtonItem *_searchButton;
