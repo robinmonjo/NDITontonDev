@@ -16,7 +16,7 @@
 
 @implementation NDITableViewController
 
-@synthesize searchBar=_searchBar, searchButton=_searchButton, cancelSearchButton=_cancelSearchButton, tableData=_tableData, filteredTableData=_filteredTableData;
+@synthesize searchBar=_searchBar, searchButton=_searchButton, cancelSearchButton=_cancelSearchButton, tableData=_tableData, filteredTableData=_filteredTableData, mapViewController=_mapViewController;
 
 - (void)viewDidLoad
 {
@@ -183,13 +183,16 @@
 {
     // Navigation logic may go here. Create and push another view controller.
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NDIPlace *selectedPlace = [[NDIModel sharedInstance] getPlaceWithName:cell.textLabel.text];
     
     if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
         cell.accessoryType = UITableViewCellAccessoryNone;
+        [self.mapViewController.displayedPlaces removeObject:selectedPlace];
     } else {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.mapViewController.displayedPlaces addObject:selectedPlace];
     }
-
+    [self.mapViewController refreshDroppedPins];
 }
 
 @end

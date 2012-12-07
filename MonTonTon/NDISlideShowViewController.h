@@ -14,6 +14,13 @@
     UIPageControl *pageControl;
     BOOL pageControlBeingUsed;
     NSMutableArray *views;
+    
+    NSString *textTitle;
+    
 }
+
+@property (nonatomic, retain) NSString *textTitle;
+
+
 
 @end

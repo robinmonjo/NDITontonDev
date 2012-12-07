@@ -12,5 +12,11 @@
 
 @synthesize name=_name, description=_description, coordinate=_coordinate;
 
+- (NSString *) title {
+    return self.name;
+}
+- (NSString *) subtitle {
+    return self.description;
+}
 
 @end

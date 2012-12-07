@@ -25,16 +25,17 @@
     UINavigationController *navMap = [[UINavigationController alloc] initWithRootViewController:mapVC];
 
     NDITableViewController *tableVC = [[NDITableViewController alloc] init];
+    tableVC.mapViewController = mapVC;
     UINavigationController *navTable = [[UINavigationController alloc] initWithRootViewController:tableVC];
     
     UISplitViewController *splitVC = [[UISplitViewController alloc] init];
+    splitVC.delegate = self;
     splitVC.viewControllers = [NSArray arrayWithObjects:navTable, navMap, nil];
     
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = splitVC;
     
     [self.window makeKeyAndVisible];
-    
     
     /*NDIServerCallManager *netManager = [[NDIServerCallManager alloc] init];
     netManager.delegate = self;

@@ -23,10 +23,11 @@
 		3B7D956F166EB01E0005E152 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7D956E166EB01E0005E152 /* Social.framework */; };
 		3B7D9571166EB10C0005E152 /* Drafts in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D9570166EB10C0005E152 /* Drafts */; };
 		3B7D9577167108700005E152 /* NDITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D9576167108700005E152 /* NDITableViewController.m */; };
-		3B7D957A16713B4F0005E152 /* NDIPlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D957916713B4F0005E152 /* NDIPlaceAnnotation.m */; };
 		3B7D957C167140710005E152 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7D957B167140700005E152 /* CoreLocation.framework */; };
 		3B7D957F167141530005E152 /* NDIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D957E167141530005E152 /* NDIModel.m */; };
 		3B7D9582167141B90005E152 /* NDIPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D9581167141B90005E152 /* NDIPlace.m */; };
+		3B7D958616716DC70005E152 /* NDIPlaceAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D958516716DC70005E152 /* NDIPlaceAnnotationView.m */; };
+		3B7D958916719E380005E152 /* effel.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D958816719E380005E152 /* effel.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,13 +55,14 @@
 		3B7D9570166EB10C0005E152 /* Drafts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Drafts; sourceTree = "<group>"; };
 		3B7D9575167108700005E152 /* NDITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDITableViewController.h; sourceTree = "<group>"; };
 		3B7D9576167108700005E152 /* NDITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDITableViewController.m; sourceTree = "<group>"; };
-		3B7D957816713B4F0005E152 /* NDIPlaceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDIPlaceAnnotation.h; sourceTree = "<group>"; };
-		3B7D957916713B4F0005E152 /* NDIPlaceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDIPlaceAnnotation.m; sourceTree = "<group>"; };
 		3B7D957B167140700005E152 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3B7D957D167141530005E152 /* NDIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDIModel.h; sourceTree = "<group>"; };
 		3B7D957E167141530005E152 /* NDIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDIModel.m; sourceTree = "<group>"; };
 		3B7D9580167141B90005E152 /* NDIPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDIPlace.h; sourceTree = "<group>"; };
 		3B7D9581167141B90005E152 /* NDIPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDIPlace.m; sourceTree = "<group>"; };
+		3B7D958416716DC70005E152 /* NDIPlaceAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDIPlaceAnnotationView.h; sourceTree = "<group>"; };
+		3B7D958516716DC70005E152 /* NDIPlaceAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDIPlaceAnnotationView.m; sourceTree = "<group>"; };
+		3B7D958816719E380005E152 /* effel.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = effel.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		3B191CD1166ABBE0009806BA /* MonTonTon */ = {
 			isa = PBXGroup;
 			children = (
+				3B7D958716719E240005E152 /* resources */,
 				3B191CDA166ABBE0009806BA /* AppDelegate.h */,
 				3B191CDB166ABBE0009806BA /* AppDelegate.m */,
 				3B191CD2166ABBE0009806BA /* Supporting Files */,
@@ -125,8 +128,8 @@
 				3B7D9570166EB10C0005E152 /* Drafts */,
 				3B7D9575167108700005E152 /* NDITableViewController.h */,
 				3B7D9576167108700005E152 /* NDITableViewController.m */,
-				3B7D957816713B4F0005E152 /* NDIPlaceAnnotation.h */,
-				3B7D957916713B4F0005E152 /* NDIPlaceAnnotation.m */,
+				3B7D958416716DC70005E152 /* NDIPlaceAnnotationView.h */,
+				3B7D958516716DC70005E152 /* NDIPlaceAnnotationView.m */,
 				3B7D9583167141BF0005E152 /* Model */,
 			);
 			path = MonTonTon;
@@ -155,6 +158,14 @@
 				3B7D9581167141B90005E152 /* NDIPlace.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		3B7D958716719E240005E152 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				3B7D958816719E380005E152 /* effel.jpeg */,
+			);
+			name = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +224,7 @@
 				3B191CE0166ABBE0009806BA /* Default@2x.png in Resources */,
 				3B191CE2166ABBE0009806BA /* Default-568h@2x.png in Resources */,
 				3B7D9571166EB10C0005E152 /* Drafts in Resources */,
+				3B7D958916719E380005E152 /* effel.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,9 +241,9 @@
 				3B7D955A166D29230005E152 /* NDISlideShowViewController.m in Sources */,
 				3B7D9564166EAA230005E152 /* NDIMapViewController.m in Sources */,
 				3B7D9577167108700005E152 /* NDITableViewController.m in Sources */,
-				3B7D957A16713B4F0005E152 /* NDIPlaceAnnotation.m in Sources */,
 				3B7D957F167141530005E152 /* NDIModel.m in Sources */,
 				3B7D9582167141B90005E152 /* NDIPlace.m in Sources */,
+				3B7D958616716DC70005E152 /* NDIPlaceAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NDIModel.h"
+#import "NDIMapViewController.h"
 
 @interface NDITableViewController : UITableViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
 @private
@@ -20,6 +21,8 @@
     NSMutableArray *_tableData;
     NSMutableArray *_filteredTableData;
     
+    NDIMapViewController *_mapViewController;
+    
 }
 
 @property (nonatomic, retain) UISearchBar *searchBar;
@@ -27,5 +30,6 @@
 @property (nonatomic, retain) UIBarButtonItem *cancelSearchButton;
 @property (nonatomic, retain) NSMutableArray *tableData;
 @property (nonatomic, retain) NSMutableArray *filteredTableData;
+@property (nonatomic, retain) NDIMapViewController *mapViewController;
 
 @end

@@ -10,7 +10,7 @@
 #import "NDIServerCallManager.h"
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, NDIServerCallManagerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, NDIServerCallManagerDelegate, UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

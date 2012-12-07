@@ -14,12 +14,18 @@
 
 @implementation NDISlideShowViewController
 
+@synthesize textTitle;
+
 
 #define NB_PAGE 7
 
 - (void) viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonSystemItemDone target:self action:@selector(doneButtonClicked)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    self.navigationItem.title = self.textTitle;
     
     //Setting up scroll view
     CGRect scrollFrame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
@@ -58,6 +64,10 @@
     [self.view addSubview:pageControl];
     
     [self alignSubviews];
+}
+
+- (void) doneButtonClicked {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)alignSubviews {

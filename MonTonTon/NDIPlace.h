@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface NDIPlace : NSObject {
+@interface NDIPlace : NSObject <MKAnnotation> {
 @private
     NSString *_name;
     NSString *_description;
@@ -19,5 +20,8 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *description;
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+
+- (NSString *) title;
+- (NSString *) subtitle;
 
 @end
